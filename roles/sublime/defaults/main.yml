@@ -1,0 +1,18 @@
+---
+homebrew_directory: '/opt/homebrew'
+
+subl_cmd_path: '/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl'
+
+sublime_base_path: '~/Library/Application Support/Sublime Text'
+sublime_config_path: "Packages/User"
+
+sublime_packages: 
+  - "Ansible"
+  - "AnsibleSnippets"
+  - "Golang Tools Integration"
+  - "LSP"
+  - "LSP-bash"
+  - "LSP-yaml"
+  - "NeoVintageous"
+  - "Package Control"
+  - "PunchMeInTheFace Color Scheme"

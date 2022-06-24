@@ -1,0 +1,6 @@
+---
+- name: "Mac development playbook"
+  hosts: all
+  roles:
+    - role: sublime
+      tags: sublime

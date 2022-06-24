@@ -1,0 +1,10 @@
+---
+- hosts: all
+
+  vars_files:
+    - defaults/main.yml
+    - vars/pkg-deps.yml
+
+  tasks:
+    - import_tasks: tasks/main.yml
+      tags: ['sublime-base']

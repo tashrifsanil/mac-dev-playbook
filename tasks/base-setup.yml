@@ -1,0 +1,24 @@
+---
+- name: Ensure Sublime Text directories exist.
+  file:
+    path: "{{ item }}"
+    state: directory
+  loop:
+    - "{{ sublime_base_path }}/{{ sublime_config_path }}"
+    - "{{ sublime_base_path }}/Installed Packages"
+
+- name: Ensure Sublime Package Control is installed.
+  get_url:
+    url: "https://packagecontrol.io/Package%20Control.sublime-package"
+    dest: "{{ sublime_base_path }}/Installed Packages/Package Control.sublime-package"
+
+- name: Ensure subl command available for use.
+  file:
+    src: "{{ subl_cmd_path }}" 
+    dest: "{{ homebrew_directory }}/bin/subl"
+    state: link
+
+- name: Ensure Sublime Package Control Packages are configured.
+  template:
+    src: ../templates/Package_Control.sublime-settings.j2
+    dest: "{{ sublime_base_path }}/{{ sublime_config_path }}/Package Control.sublime-settings"

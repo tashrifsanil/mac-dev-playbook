@@ -1,0 +1,6 @@
+---
+- name: Perform Sublime Text Base Setup
+  import_tasks: base-setup.yml
+
+- name: Resolve Sublime Text Package System Dependencies
+  import_tasks: resolve-pkg-deps.yml

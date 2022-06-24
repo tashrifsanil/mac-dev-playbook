@@ -1,0 +1,7 @@
+---
+- name: Installing sublime package's npm dependencies
+  npm: 
+    name: "{{ item }}"
+    global: yes
+    state: present
+  loop: "{{ npm_packages }}"

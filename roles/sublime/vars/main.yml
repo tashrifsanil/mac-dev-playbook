@@ -1,0 +1,6 @@
+---
+homebrew_packages:
+  - shellcheck
+
+npm_packages:
+  - bash-language-server
