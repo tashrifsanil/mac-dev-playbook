@@ -1,0 +1,10 @@
+---
+- name: Configure LSP setting
+  template:
+    src: ../templates/LSP.sublime-settings.j2
+    dest: "{{ sublime_base_path }}/{{ sublime_config_path }}/LSP.sublime-settings"
+
+- name: Configure LSP-Bash settings
+  template:
+    src: ../templates/LSP-bash.sublime-settings.j2
+    dest: "{{ sublime_base_path }}/{{ sublime_config_path }}/LSP-bash.sublime-settings"

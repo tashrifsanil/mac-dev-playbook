@@ -1,0 +1,12 @@
+{
+	"ignored_packages": [
+		"Six",
+		"Vintage",
+		"Vintageous",
+	],
+	"font_face": "JetBrainsMono Nerd Font Mono",
+	"font_size": 14,
+	"theme": "auto",
+	"color_scheme": "Mariana.sublime-color-scheme",
+	"trim_automatic_white_space": true
+}

@@ -1,6 +1,14 @@
 ---
 homebrew_packages:
   - shellcheck
+  - golang
+  - chruby
+  - ruby-install
 
 npm_packages:
   - bash-language-server
+
+gem_packages:
+  - sorbet
+  - sorbet-runtime
+  - solargraph

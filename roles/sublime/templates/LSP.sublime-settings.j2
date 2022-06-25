@@ -1,0 +1,30 @@
+{
+  "lsp_format_on_save": true,
+  "semantic_highlighting": true,
+  "clients": {
+    "ruby": {
+      "enabled": true,
+      "command": [
+        "~/.gem/ruby/{{ ruby_version}}/bin/solargraph",
+        "stdio"
+      ],
+      "selector": "source.ruby | text.html.ruby",
+      "initializationOptions": {
+        "diagnostics": true
+      }
+    },
+    "sorbet": {
+      "enabled": true,
+      "command": [
+        "~/.gem/ruby/{{ ruby_version}}/bin/srb",
+        "tc",
+        "--typed",
+        "true",
+        "--enable-all-experimental-lsp-features",
+        "--lsp",
+        "--disable-watchman"
+      ],
+      "selector": "-source.ruby | text.html.ruby"
+    }
+  }
+}

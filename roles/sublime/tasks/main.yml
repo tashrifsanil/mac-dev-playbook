@@ -4,3 +4,6 @@
 
 - name: Resolve Sublime Text Package System Dependencies
   import_tasks: resolve-pkg-deps.yml
+
+- name: Configure Sublime Text LSP
+  import_tasks: configure-lsp.yml

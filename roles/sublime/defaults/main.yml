@@ -1,18 +1,23 @@
 ---
-homebrew_directory: '/opt/homebrew'
+homebrew_prefix: "{{ (ansible_machine == 'arm64') | ternary('/opt/homebrew', '/usr/local') }}"
+ruby_version: 3.1.2
 
-subl_cmd_path: '/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl'
+subl_cmd_path: "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl"
 
-sublime_base_path: '~/Library/Application Support/Sublime Text'
+sublime_base_path: "~/Library/Application Support/Sublime Text"
 sublime_config_path: "Packages/User"
 
-sublime_packages: 
+sublime_packages:
   - "Ansible"
   - "AnsibleSnippets"
   - "Golang Tools Integration"
+  - "Gomod"
   - "LSP"
+  - "LSP-json"
   - "LSP-bash"
   - "LSP-yaml"
+  - "LSP-gopls"
+  - "LSP-jdtls"
   - "NeoVintageous"
   - "Package Control"
-  - "PunchMeInTheFace Color Scheme"
+  - "Jinja2"

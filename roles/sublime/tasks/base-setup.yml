@@ -13,12 +13,22 @@
     dest: "{{ sublime_base_path }}/Installed Packages/Package Control.sublime-package"
 
 - name: Ensure subl command available for use.
-  file:
-    src: "{{ subl_cmd_path }}" 
-    dest: "{{ homebrew_directory }}/bin/subl"
-    state: link
+  blockinfile:
+    path: ~/.zshrc
+    state: present
+    block: |
+      ###############################################################################
+      # SUBLIME TEXT SUBL CMD
+      ###############################################################################
+
+      export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
 
 - name: Ensure Sublime Package Control Packages are configured.
   template:
     src: ../templates/Package_Control.sublime-settings.j2
     dest: "{{ sublime_base_path }}/{{ sublime_config_path }}/Package Control.sublime-settings"
+
+- name: Copy Sublime Text Preferences
+  copy:
+    src: ../templates/Preferences.sublime-settings
+    dest: "{{ sublime_base_path }}/{{ sublime_config_path }}/Preferences.sublime-settings"

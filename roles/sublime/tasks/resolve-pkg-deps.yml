@@ -1,7 +1,32 @@
 ---
+- name: Installing sublime package's homebrew dependencies
+  homebrew:
+    name: "{{ item }}"
+    state: present
+  loop: "{{ homebrew_packages }}"
+
 - name: Installing sublime package's npm dependencies
-  npm: 
+  npm:
     name: "{{ item }}"
     global: yes
     state: present
   loop: "{{ npm_packages }}"
+
+- name: Install Ruby
+  shell:
+    cmd: "{{ homebrew_prefix }}/bin/ruby-install --no-reinstall ruby {{ ruby_version }}"
+    creates: "~/.rubies/ruby-{{ ruby_version }}/"
+
+- name: Configure Ruby Path in zshrc
+  lineinfile:
+    path: ~/.zshrc
+    state: present
+    line: "{{ item }}"
+  loop:
+    - source $HOMEBREW_PREFIX/opt/chruby/share/chruby/chruby.sh
+    - "chruby ruby-{{ ruby_version }}"
+
+- name: Install required sublime ruby gems
+  shell:
+    cmd: "~/.rubies/ruby-{{ ruby_version }}/bin/gem install {{ item }}"
+  loop: "{{ gem_packages }}"
