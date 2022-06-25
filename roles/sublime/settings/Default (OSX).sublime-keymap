@@ -1,0 +1,15 @@
+[
+	{
+		"command": "lsp_document_symbols",
+		"keys": [
+			"primary+r"
+		],
+		"context": [
+			{
+				"key": "lsp.session_with_capability",
+				"operator": "equal",
+				"operand": "documentSymbolProvider"
+			}
+		]
+	}
+]
