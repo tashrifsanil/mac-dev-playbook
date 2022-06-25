@@ -14,8 +14,11 @@
 
 - name: Install Ruby
   shell:
-    cmd: "{{ homebrew_prefix }}/bin/ruby-install --no-reinstall ruby {{ ruby_version }}"
+    cmd: "{{ item }}"
     creates: "~/.rubies/ruby-{{ ruby_version }}/"
+  loop:
+    - rm -rf ~/.gem
+    - "{{ homebrew_prefix }}/bin/ruby-install --no-reinstall ruby {{ ruby_version }}"
 
 - name: Configure Ruby Path in zshrc
   lineinfile:
@@ -23,7 +26,7 @@
     state: present
     line: "{{ item }}"
   loop:
-    - source $HOMEBREW_PREFIX/opt/chruby/share/chruby/chruby.sh
+    - "source {{ homebrew_prefix }}/opt/chruby/share/chruby/chruby.sh"
     - "chruby ruby-{{ ruby_version }}"
 
 - name: Install required sublime ruby gems
