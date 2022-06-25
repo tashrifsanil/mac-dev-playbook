@@ -32,3 +32,8 @@
   copy:
     src: ../templates/Preferences.sublime-settings
     dest: "{{ sublime_base_path }}/{{ sublime_config_path }}/Preferences.sublime-settings"
+
+- name: Setup Sublime Text mouse bindings
+  template:
+    src: "../templates/Default (OSX).sublime-mousemap.j2"
+    dest: "{{ sublime_base_path }}/{{ sublime_config_path }}/Default (OSX).sublime-mousemap"
