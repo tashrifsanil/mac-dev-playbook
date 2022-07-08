@@ -10,5 +10,5 @@
 	"color_scheme": "Mariana.sublime-color-scheme",
 	"trim_automatic_white_space": true,
 	"vintageous_enable_sneak": true,
-	"vintageous_use_sys_clipboard": true
+	"vintageous_use_sys_clipboard": false
 }

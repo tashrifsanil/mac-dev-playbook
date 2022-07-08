@@ -11,5 +11,35 @@
 				"operand": "documentSymbolProvider"
 			}
 		]
-	}
+	},
+	// Find references
+	{
+        "command": "lsp_symbol_references",
+        "keys": [
+            "primary+f",
+            "primary+r"
+        ],
+        "context": [
+            {
+                "key": "lsp.session_with_capability",
+                "operator": "equal",
+                "operand": "referencesProvider"
+            },
+        ]
+    },
+    // Rename Symbol
+    {
+        "command": "lsp_symbol_rename",
+        "keys": [
+            "primary+r",
+            "primary+s"
+        ],
+        "context": [
+            {
+                "key": "lsp.session_with_capability",
+                "operator": "equal",
+                "operand": "renameProvider"
+            }
+        ]
+    },
 ]

@@ -12,3 +12,5 @@ gem_packages:
   - sorbet
   - sorbet-runtime
   - solargraph
+  - readapt
+  - erb_lint
