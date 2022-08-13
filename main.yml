@@ -4,3 +4,6 @@
   roles:
     - role: sublime
       tags: sublime
+
+    - role: cmdline
+      tags: cmdline

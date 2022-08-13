@@ -1,0 +1,9 @@
+---
+- name: Installing cmdline enhancement packages
+  homebrew:
+    name: "{{ item }}"
+    state: present
+  loop: "{{ homebrew_cli_packages }}"
+
+- name: Setup Git Pager Optimizations
+  import_tasks: git-pager-setup.yml
